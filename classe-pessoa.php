@@ -31,7 +31,7 @@ Class Pessoa {
     
     //FUNÇÃO CADASTRAR
     public function cadastrarPessoa($nome, $telefone, $funcao, $admissao, $ferias) {
-        //VERIFICAR SE O EMAIL JÁ FOI CADASTRADO
+        //VERIFICAR SE FUNCIONARIO JÁ FOI CADASTRADO
         $cmd = $this->pdo->prepare('SELECT id from funcionario WHERE nome =:n');
         $cmd->bindValue(':n', $nome);
         $cmd->execute();
@@ -69,7 +69,7 @@ Class Pessoa {
 
         //ATUALIZAR DO BANCO DE DADOS
 
-        //VERIFICAR SE O EMAIL JÁ ESTÁ CADASTRADO
+      
         public function atualizarDados($id, $nome, $telefone, $funcao, $admissao, $ferias ){
     
             $cmd = $this->pdo->prepare('UPDATE funcionario SET nome = :n, telefone = :t, funcao = :c, admissao = :a , ferias = :f WHERE id = :id');
